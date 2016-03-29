@@ -41,6 +41,10 @@
         methods:{
             close(index){
                 this.img_urls.splice(index,1); // 删除数组中对应索引的元素
+                console.log('删除后的数据为:',this.img_urls); //输入删除后的数据
+                for(var i in this.img_urls){ //遍历出剩下的数据
+                    console.log(this.img_urls[i].url);
+                }
             }
         }
     }
