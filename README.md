@@ -16,3 +16,5 @@ npm install
 ```
 webpack
 ```
+
+#### 3、浏览器打开index.html查看
