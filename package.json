@@ -1,0 +1,39 @@
+{
+  "name": "show-image",
+  "version": "1.0.0",
+  "description": "基于vuejs,webpack实现的图片显示组件",
+  "author": "SAHX",
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/SAHX/show-image.git"
+  },
+  "keywords": [
+    "vue",
+    "image",
+    "showImage"
+  ],
+  "dependencies": {
+    "vue": "^1.0.15"
+  },
+  "devDependencies": {
+    "babel-cli": "6.x.x",
+    "babel-core": "6.x.x",
+    "babel-loader": "^6.2.1",
+    "babel-plugin-transform-runtime": "6.x.x",
+    "babel-preset-es2015": "^6.3.13",
+    "babel-preset-es2015-loose": "6.x.x",
+    "babel-preset-stage-0": "^6.3.13",
+    "babel-preset-stage-1": "6.x.x",
+    "babel-runtime": "^6.3.19",
+    "css-loader": "^0.23.1",
+    "file-loader": "^0.8.5",
+    "style-loader": "^0.13.0",
+    "url-loader": "^0.5.7",
+    "vue-hot-reload-api": "^1.3.0",
+    "vue-html-loader": "^1.1.0",
+    "vue-loader": "^7.0.3",
+    "webpack": "^1.12.12",
+    "webpack-dev-server": "^1.14.1"
+  },
+  "license": "MIT"
+}
