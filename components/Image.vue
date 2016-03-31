@@ -1,11 +1,12 @@
 <template>
     <div class="img_box">
-        <img :src="img_url" alt="image" id="img_{{index}}">
+        <img :src="img_url" alt="image" id="img_{{index}}" @click="view(img_url)">
     </div>
 </template>
 <style>
     .img_box{
         border: dashed #8c92a3 2px;
+        margin-bottom: 20px;
         border-radius:5px;
         overflow: hidden;
     }
@@ -57,6 +58,12 @@
             index:{
                 type:Number,
                 required: true
+            }
+        },
+        methods:{
+            view(url){
+                console.log('子组件的:',url);
+                this.$dispatch('view',url);
             }
         }
     }
