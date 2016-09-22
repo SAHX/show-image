@@ -1,11 +1,8 @@
 <template>
     <div class="show-img">
         <div class="item" v-for="i in img_urls">
-            <img src="./img/close.png" @click="delete($index)" v-if="show_del_icon" class="delete">
-            <my-image :img_url="i.url" :index="$index"></my-image>
-        </div>
-        <div class="view panel" v-show="view_state" @click="view_close">
-            <img :src="view_url" alt="">
+            <img src="./img/close.png" @click="del($index)" v-if="show_del_icon" class="delete">
+            <my-image :img_min_url="i.url" :img_url="i.url" :index="$index"></my-image>
         </div>
     </div>
 </template>
@@ -42,9 +39,13 @@
         max-height: 550px;
         max-width: 550px;
     }
+    /*@import "./lib/viewer.min.css";*/
+
 </style>
 
 <script>
+//    import Viewer from './lib/viewer'
+
     import Image from './Image.vue'
     export default{
         components:{
@@ -73,7 +74,7 @@
 
         },
         methods:{
-            delete(index){
+            del(index){
                 this.img_urls.splice(index,1); // 删除数组中对应索引的元素
                 console.log('删除后的数据为:',this.img_urls); //输入删除后的数据
                 for(var i in this.img_urls){ //遍历出剩下的数据
@@ -82,14 +83,6 @@
             },
             view_close(){
                 this.view_state = false
-            }
-        },
-        events:{
-            'view':function(url){
-                console.log('父组件的:',url);
-                if(!this.view_state_set) return;
-                this.view_url = url;
-                this.view_state = true;
             }
         }
     }

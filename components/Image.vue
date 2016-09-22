@@ -1,6 +1,6 @@
 <template>
     <div class="img_box">
-        <img :src="img_url" alt="image" id="img_{{index}}" @click="view(img_url)">
+        <img :src="img_min_url" alt="image" id="img_{{index}}">
     </div>
 </template>
 <style>
@@ -13,10 +13,16 @@
     .img_box img{
         position: relative;
     }
+    @import "./lib/viewer.min.css";
 </style>
 <script>
+    import Viewer from './lib/viewer.min'
     export default{
         ready(){
+            var self = this;
+            new Viewer(document.getElementById('img_'+this.index),{
+                url:function(){return self.img_url}
+            });
             $('.img_box').css('width',this.set_width+'px');
             $('.img_box').css('height',this.set_height+'px');
             var set_width = this.set_width;
@@ -51,19 +57,17 @@
                 type:Number,
                 default:160
             },
-            img_url:{
+            img_min_url:{ //展示的小图
+                type:String,
+                required: true
+            },
+            img_url:{ //查看是的原图
                 type:String,
                 required: true
             },
             index:{
                 type:Number,
                 required: true
-            }
-        },
-        methods:{
-            view(url){
-                console.log('子组件的:',url);
-                this.$dispatch('view',url);
             }
         }
     }
