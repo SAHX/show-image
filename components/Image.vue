@@ -1,6 +1,9 @@
 <template>
     <div class="img_box">
         <img :src="img_url" alt="image" id="img_{{index}}" @click="view(img_url)">
+
+
+        
     </div>
 </template>
 <style>
